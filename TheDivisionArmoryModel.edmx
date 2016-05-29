@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TDAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TDAModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TDAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TDAEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="HEArmorSet" EntityType="TDAModel.HEArmor" />
+          <EntitySet Name="TDArmorySet" EntityType="TDAModel.TDArmory" />
+          <EntitySet Name="SetarmorSet" EntityType="TDAModel.Setarmor" />
+          <EntitySet Name="WeaponsSet" EntityType="TDAModel.Weapons" />
+          <AssociationSet Name="TDArmoryHEArmor" Association="TDAModel.TDArmoryHEArmor">
+            <End Role="TDArmory" EntitySet="TDArmorySet" />
+            <End Role="HEArmor" EntitySet="HEArmorSet" />
+          </AssociationSet>
+          <AssociationSet Name="TDArmorySetarmor" Association="TDAModel.TDArmorySetarmor">
+            <End Role="TDArmory" EntitySet="TDArmorySet" />
+            <End Role="Setarmor" EntitySet="SetarmorSet" />
+          </AssociationSet>
+          <AssociationSet Name="TDArmoryWeapons" Association="TDAModel.TDArmoryWeapons">
+            <End Role="TDArmory" EntitySet="TDArmorySet" />
+            <End Role="Weapons" EntitySet="WeaponsSet" />
+          </AssociationSet>
+          <EntitySet Name="SetArmor191Set" EntityType="TDAModel.SetArmor191" />
+          <EntitySet Name="SetArmor214Set" EntityType="TDAModel.SetArmor214" />
+          <EntitySet Name="SetArmor240Set" EntityType="TDAModel.SetArmor240" />
+          <AssociationSet Name="SetarmorSetArmor191" Association="TDAModel.SetarmorSetArmor191">
+            <End Role="Setarmor" EntitySet="SetarmorSet" />
+            <End Role="SetArmor191" EntitySet="SetArmor191Set" />
+          </AssociationSet>
+          <AssociationSet Name="SetarmorSetArmor214" Association="TDAModel.SetarmorSetArmor214">
+            <End Role="Setarmor" EntitySet="SetarmorSet" />
+            <End Role="SetArmor214" EntitySet="SetArmor214Set" />
+          </AssociationSet>
+          <AssociationSet Name="SetarmorSetArmor240" Association="TDAModel.SetarmorSetArmor240">
+            <End Role="Setarmor" EntitySet="SetarmorSet" />
+            <End Role="SetArmor240" EntitySet="SetArmor240Set" />
+          </AssociationSet>
+          <EntitySet Name="Weapons163Set" EntityType="TDAModel.Weapons163" />
+          <EntitySet Name="Weapons182Set" EntityType="TDAModel.Weapons182" />
+          <EntitySet Name="Weapons204Set" EntityType="TDAModel.Weapons204" />
+          <AssociationSet Name="WeaponsWeapons163" Association="TDAModel.WeaponsWeapons163">
+            <End Role="Weapons" EntitySet="WeaponsSet" />
+            <End Role="Weapons163" EntitySet="Weapons163Set" />
+          </AssociationSet>
+          <AssociationSet Name="WeaponsWeapons182" Association="TDAModel.WeaponsWeapons182">
+            <End Role="Weapons" EntitySet="WeaponsSet" />
+            <End Role="Weapons182" EntitySet="Weapons182Set" />
+          </AssociationSet>
+          <AssociationSet Name="WeaponsWeapons204" Association="TDAModel.WeaponsWeapons204">
+            <End Role="Weapons" EntitySet="WeaponsSet" />
+            <End Role="Weapons204" EntitySet="Weapons204Set" />
+          </AssociationSet>
+          <EntitySet Name="WeaponsNamedSet" EntityType="TDAModel.WeaponsNamed" />
+          <AssociationSet Name="WeaponsWeaponsNamed" Association="TDAModel.WeaponsWeaponsNamed">
+            <End Role="Weapons" EntitySet="WeaponsSet" />
+            <End Role="WeaponsNamed" EntitySet="WeaponsNamedSet" />
+          </AssociationSet>
+          <EntitySet Name="SetArmorSlotSet" EntityType="TDAModel.SetArmorSlot" />
+          <AssociationSet Name="SetArmor191SetArmorSlot" Association="TDAModel.SetArmor191SetArmorSlot">
+            <End Role="SetArmor191" EntitySet="SetArmor191Set" />
+            <End Role="SetArmorSlot" EntitySet="SetArmorSlotSet" />
+          </AssociationSet>
+          <AssociationSet Name="SetArmor214SetArmorSlot" Association="TDAModel.SetArmor214SetArmorSlot">
+            <End Role="SetArmor214" EntitySet="SetArmor214Set" />
+            <End Role="SetArmorSlot" EntitySet="SetArmorSlotSet" />
+          </AssociationSet>
+          <AssociationSet Name="SetArmor240SetArmorSlot" Association="TDAModel.SetArmor240SetArmorSlot">
+            <End Role="SetArmor240" EntitySet="SetArmor240Set" />
+            <End Role="SetArmorSlot" EntitySet="SetArmorSlotSet" />
+          </AssociationSet>
+          <EntitySet Name="MaskSet" EntityType="TDAModel.Mask" />
+          <EntitySet Name="ChestSet" EntityType="TDAModel.Chest" />
+          <EntitySet Name="KneepadsSet" EntityType="TDAModel.Kneepads" />
+          <EntitySet Name="BackpackSet" EntityType="TDAModel.Backpack" />
+          <EntitySet Name="GlovesSet" EntityType="TDAModel.Gloves" />
+          <EntitySet Name="HolsterSet" EntityType="TDAModel.Holster" />
+          <AssociationSet Name="SetArmorSlotMask" Association="TDAModel.SetArmorSlotMask">
+            <End Role="SetArmorSlot" EntitySet="SetArmorSlotSet" />
+            <End Role="Mask" EntitySet="MaskSet" />
+          </AssociationSet>
+          <AssociationSet Name="SetArmorSlotChest" Association="TDAModel.SetArmorSlotChest">
+            <End Role="SetArmorSlot" EntitySet="SetArmorSlotSet" />
+            <End Role="Chest" EntitySet="ChestSet" />
+          </AssociationSet>
+          <AssociationSet Name="SetArmorSlotKneepads" Association="TDAModel.SetArmorSlotKneepads">
+            <End Role="SetArmorSlot" EntitySet="SetArmorSlotSet" />
+            <End Role="Kneepads" EntitySet="KneepadsSet" />
+          </AssociationSet>
+          <AssociationSet Name="SetArmorSlotHolster" Association="TDAModel.SetArmorSlotHolster">
+            <End Role="SetArmorSlot" EntitySet="SetArmorSlotSet" />
+            <End Role="Holster" EntitySet="HolsterSet" />
+          </AssociationSet>
+          <AssociationSet Name="SetArmorSlotGloves" Association="TDAModel.SetArmorSlotGloves">
+            <End Role="SetArmorSlot" EntitySet="SetArmorSlotSet" />
+            <End Role="Gloves" EntitySet="GlovesSet" />
+          </AssociationSet>
+          <AssociationSet Name="SetArmorSlotBackpack" Association="TDAModel.SetArmorSlotBackpack">
+            <End Role="SetArmorSlot" EntitySet="SetArmorSlotSet" />
+            <End Role="Backpack" EntitySet="BackpackSet" />
+          </AssociationSet>
+          <EntitySet Name="HEMaskSet" EntityType="TDAModel.HEMask" />
+          <EntitySet Name="HEChestSet" EntityType="TDAModel.HEChest" />
+          <EntitySet Name="HEKneepadsSet" EntityType="TDAModel.HEKneepads" />
+          <EntitySet Name="HEBackpackSet" EntityType="TDAModel.HEBackpack" />
+          <EntitySet Name="HEGlovesSet" EntityType="TDAModel.HEGloves" />
+          <EntitySet Name="HEHolsterSet" EntityType="TDAModel.HEHolster" />
+          <EntitySet Name="HEArmor163Set" EntityType="TDAModel.HEArmor163" />
+          <EntitySet Name="HEArmor182Set" EntityType="TDAModel.HEArmor182" />
+          <EntitySet Name="HEArmor204Set" EntityType="TDAModel.HEArmor204" />
+          <EntitySet Name="HEArmorSlotsSet" EntityType="TDAModel.HEArmorSlots" />
+          <AssociationSet Name="HEArmorHEArmor163" Association="TDAModel.HEArmorHEArmor163">
+            <End Role="HEArmor" EntitySet="HEArmorSet" />
+            <End Role="HEArmor163" EntitySet="HEArmor163Set" />
+          </AssociationSet>
+          <AssociationSet Name="HEArmorHEArmor182" Association="TDAModel.HEArmorHEArmor182">
+            <End Role="HEArmor" EntitySet="HEArmorSet" />
+            <End Role="HEArmor182" EntitySet="HEArmor182Set" />
+          </AssociationSet>
+          <AssociationSet Name="HEArmorHEArmor204" Association="TDAModel.HEArmorHEArmor204">
+            <End Role="HEArmor" EntitySet="HEArmorSet" />
+            <End Role="HEArmor204" EntitySet="HEArmor204Set" />
+          </AssociationSet>
+          <AssociationSet Name="HEArmor204HEArmorSlots" Association="TDAModel.HEArmor204HEArmorSlots">
+            <End Role="HEArmor204" EntitySet="HEArmor204Set" />
+            <End Role="HEArmorSlots" EntitySet="HEArmorSlotsSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEArmor182HEArmorSlots" Association="TDAModel.HEArmor182HEArmorSlots">
+            <End Role="HEArmor182" EntitySet="HEArmor182Set" />
+            <End Role="HEArmorSlots" EntitySet="HEArmorSlotsSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEArmor163HEArmorSlots" Association="TDAModel.HEArmor163HEArmorSlots">
+            <End Role="HEArmor163" EntitySet="HEArmor163Set" />
+            <End Role="HEArmorSlots" EntitySet="HEArmorSlotsSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEArmorSlotsHEChest" Association="TDAModel.HEArmorSlotsHEChest">
+            <End Role="HEArmorSlots" EntitySet="HEArmorSlotsSet" />
+            <End Role="HEChest" EntitySet="HEChestSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEArmorSlotsHEKneepads" Association="TDAModel.HEArmorSlotsHEKneepads">
+            <End Role="HEArmorSlots" EntitySet="HEArmorSlotsSet" />
+            <End Role="HEKneepads" EntitySet="HEKneepadsSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEArmorSlotsHEGloves" Association="TDAModel.HEArmorSlotsHEGloves">
+            <End Role="HEArmorSlots" EntitySet="HEArmorSlotsSet" />
+            <End Role="HEGloves" EntitySet="HEGlovesSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEArmorSlotsHEMask" Association="TDAModel.HEArmorSlotsHEMask">
+            <End Role="HEArmorSlots" EntitySet="HEArmorSlotsSet" />
+            <End Role="HEMask" EntitySet="HEMaskSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEArmorSlotsHEHolster" Association="TDAModel.HEArmorSlotsHEHolster">
+            <End Role="HEArmorSlots" EntitySet="HEArmorSlotsSet" />
+            <End Role="HEHolster" EntitySet="HEHolsterSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEArmorSlotsHEBackpack" Association="TDAModel.HEArmorSlotsHEBackpack">
+            <End Role="HEArmorSlots" EntitySet="HEArmorSlotsSet" />
+            <End Role="HEBackpack" EntitySet="HEBackpackSet" />
+          </AssociationSet>
+          <EntitySet Name="HEGlovesTalentsSet" EntityType="TDAModel.HEGlovesTalents" />
+          <EntitySet Name="HEKneepadsTalentsSet" EntityType="TDAModel.HEKneepadsTalents" />
+          <EntitySet Name="HEChestTalentsSet" EntityType="TDAModel.HEChestTalents" />
+          <AssociationSet Name="HEGlovesHEGlovesTalents" Association="TDAModel.HEGlovesHEGlovesTalents">
+            <End Role="HEGloves" EntitySet="HEGlovesSet" />
+            <End Role="HEGlovesTalents" EntitySet="HEGlovesTalentsSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEKneepadsHEKneepadsTalents" Association="TDAModel.HEKneepadsHEKneepadsTalents">
+            <End Role="HEKneepads" EntitySet="HEKneepadsSet" />
+            <End Role="HEKneepadsTalents" EntitySet="HEKneepadsTalentsSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEChestHEChestTalents" Association="TDAModel.HEChestHEChestTalents">
+            <End Role="HEChest" EntitySet="HEChestSet" />
+            <End Role="HEChestTalents" EntitySet="HEChestTalentsSet" />
+          </AssociationSet>
+          <EntitySet Name="HEMaskTalentsSet" EntityType="TDAModel.HEMaskTalents" />
+          <EntitySet Name="HEHolsterTalentsSet" EntityType="TDAModel.HEHolsterTalents" />
+          <EntitySet Name="HEBackpackTalentsSet" EntityType="TDAModel.HEBackpackTalents" />
+          <AssociationSet Name="HEMaskHEMaskTalents" Association="TDAModel.HEMaskHEMaskTalents">
+            <End Role="HEMask" EntitySet="HEMaskSet" />
+            <End Role="HEMaskTalents" EntitySet="HEMaskTalentsSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEHolsterHEHolsterTalents" Association="TDAModel.HEHolsterHEHolsterTalents">
+            <End Role="HEHolster" EntitySet="HEHolsterSet" />
+            <End Role="HEHolsterTalents" EntitySet="HEHolsterTalentsSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEBackpackHEBackpackTalents" Association="TDAModel.HEBackpackHEBackpackTalents">
+            <End Role="HEBackpack" EntitySet="HEBackpackSet" />
+            <End Role="HEBackpackTalents" EntitySet="HEBackpackTalentsSet" />
+          </AssociationSet>
+          <EntitySet Name="HEChestMajorSlot1Set" EntityType="TDAModel.HEChestMajorSlot1" />
+          <EntitySet Name="HEChestMajorSlot2Set" EntityType="TDAModel.HEChestMajorSlot2" />
+          <EntitySet Name="HEChestMajorSlot3Set" EntityType="TDAModel.HEChestMajorSlot3" />
+          <EntitySet Name="HEChestMajorAttribsSet" EntityType="TDAModel.HEChestMajorAttribs" />
+          <EntitySet Name="HEChestMainstatSet" EntityType="TDAModel.HEChestMainstat" />
+          <EntitySet Name="MainstatFirearmsSet" EntityType="TDAModel.MainstatFirearms" />
+          <EntitySet Name="MainstatStaminaSet" EntityType="TDAModel.MainstatStamina" />
+          <EntitySet Name="MainstatElectronicsSet" EntityType="TDAModel.MainstatElectronics" />
+          <AssociationSet Name="HEChestHEChestMainstat" Association="TDAModel.HEChestHEChestMainstat">
+            <End Role="HEChest" EntitySet="HEChestSet" />
+            <End Role="HEChestMainstat" EntitySet="HEChestMainstatSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEChestMainstatMainstatFirearms" Association="TDAModel.HEChestMainstatMainstatFirearms">
+            <End Role="HEChestMainstat" EntitySet="HEChestMainstatSet" />
+            <End Role="MainstatFirearms" EntitySet="MainstatFirearmsSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEChestMainstatMainstatStamina" Association="TDAModel.HEChestMainstatMainstatStamina">
+            <End Role="HEChestMainstat" EntitySet="HEChestMainstatSet" />
+            <End Role="MainstatStamina" EntitySet="MainstatStaminaSet" />
+          </AssociationSet>
+          <AssociationSet Name="HEChestMainstatMainstatElectronics" Association="TDAModel.HEChestMainstatMainstatElectronics">
+            <End Role="HEChestMainstat" EntitySet="HEChestMainstatSet" />
+            <End Role="MainstatElectronics" EntitySet="MainstatElectronicsSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="HEArmor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="TDArmory" Relationship="TDAModel.TDArmoryHEArmor" FromRole="HEArmor" ToRole="TDArmory" />
+          <NavigationProperty Name="HEArmor163" Relationship="TDAModel.HEArmorHEArmor163" FromRole="HEArmor" ToRole="HEArmor163" />
+          <NavigationProperty Name="HEArmor182" Relationship="TDAModel.HEArmorHEArmor182" FromRole="HEArmor" ToRole="HEArmor182" />
+          <NavigationProperty Name="HEArmor204" Relationship="TDAModel.HEArmorHEArmor204" FromRole="HEArmor" ToRole="HEArmor204" />
+        </EntityType>
+        <EntityType Name="TDArmory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEArmor" Relationship="TDAModel.TDArmoryHEArmor" FromRole="TDArmory" ToRole="HEArmor" />
+          <NavigationProperty Name="Setarmor" Relationship="TDAModel.TDArmorySetarmor" FromRole="TDArmory" ToRole="Setarmor" />
+          <NavigationProperty Name="Weapons" Relationship="TDAModel.TDArmoryWeapons" FromRole="TDArmory" ToRole="Weapons" />
+        </EntityType>
+        <EntityType Name="Setarmor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="TDArmory" Relationship="TDAModel.TDArmorySetarmor" FromRole="Setarmor" ToRole="TDArmory" />
+          <NavigationProperty Name="SetArmor191" Relationship="TDAModel.SetarmorSetArmor191" FromRole="Setarmor" ToRole="SetArmor191" />
+          <NavigationProperty Name="SetArmor214" Relationship="TDAModel.SetarmorSetArmor214" FromRole="Setarmor" ToRole="SetArmor214" />
+          <NavigationProperty Name="SetArmor240" Relationship="TDAModel.SetarmorSetArmor240" FromRole="Setarmor" ToRole="SetArmor240" />
+        </EntityType>
+        <EntityType Name="Weapons">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="TDArmory" Relationship="TDAModel.TDArmoryWeapons" FromRole="Weapons" ToRole="TDArmory" />
+          <NavigationProperty Name="Weapons163" Relationship="TDAModel.WeaponsWeapons163" FromRole="Weapons" ToRole="Weapons163" />
+          <NavigationProperty Name="Weapons182" Relationship="TDAModel.WeaponsWeapons182" FromRole="Weapons" ToRole="Weapons182" />
+          <NavigationProperty Name="Weapons204" Relationship="TDAModel.WeaponsWeapons204" FromRole="Weapons" ToRole="Weapons204" />
+          <NavigationProperty Name="WeaponsNamed" Relationship="TDAModel.WeaponsWeaponsNamed" FromRole="Weapons" ToRole="WeaponsNamed" />
+        </EntityType>
+        <Association Name="TDArmoryHEArmor">
+          <End Type="TDAModel.TDArmory" Role="TDArmory" Multiplicity="1" />
+          <End Type="TDAModel.HEArmor" Role="HEArmor" Multiplicity="1" />
+        </Association>
+        <Association Name="TDArmorySetarmor">
+          <End Type="TDAModel.TDArmory" Role="TDArmory" Multiplicity="1" />
+          <End Type="TDAModel.Setarmor" Role="Setarmor" Multiplicity="1" />
+        </Association>
+        <Association Name="TDArmoryWeapons">
+          <End Type="TDAModel.TDArmory" Role="TDArmory" Multiplicity="1" />
+          <End Type="TDAModel.Weapons" Role="Weapons" Multiplicity="1" />
+        </Association>
+        <EntityType Name="SetArmor191">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Setarmor" Relationship="TDAModel.SetarmorSetArmor191" FromRole="SetArmor191" ToRole="Setarmor" />
+          <NavigationProperty Name="SetArmorSlot" Relationship="TDAModel.SetArmor191SetArmorSlot" FromRole="SetArmor191" ToRole="SetArmorSlot" />
+        </EntityType>
+        <EntityType Name="SetArmor214">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Setarmor" Relationship="TDAModel.SetarmorSetArmor214" FromRole="SetArmor214" ToRole="Setarmor" />
+          <NavigationProperty Name="SetArmorSlot" Relationship="TDAModel.SetArmor214SetArmorSlot" FromRole="SetArmor214" ToRole="SetArmorSlot" />
+        </EntityType>
+        <EntityType Name="SetArmor240">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Setarmor" Relationship="TDAModel.SetarmorSetArmor240" FromRole="SetArmor240" ToRole="Setarmor" />
+          <NavigationProperty Name="SetArmorSlot" Relationship="TDAModel.SetArmor240SetArmorSlot" FromRole="SetArmor240" ToRole="SetArmorSlot" />
+        </EntityType>
+        <Association Name="SetarmorSetArmor191">
+          <End Type="TDAModel.Setarmor" Role="Setarmor" Multiplicity="1" />
+          <End Type="TDAModel.SetArmor191" Role="SetArmor191" Multiplicity="1" />
+        </Association>
+        <Association Name="SetarmorSetArmor214">
+          <End Type="TDAModel.Setarmor" Role="Setarmor" Multiplicity="1" />
+          <End Type="TDAModel.SetArmor214" Role="SetArmor214" Multiplicity="1" />
+        </Association>
+        <Association Name="SetarmorSetArmor240">
+          <End Type="TDAModel.Setarmor" Role="Setarmor" Multiplicity="1" />
+          <End Type="TDAModel.SetArmor240" Role="SetArmor240" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Weapons163">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Weapons" Relationship="TDAModel.WeaponsWeapons163" FromRole="Weapons163" ToRole="Weapons" />
+        </EntityType>
+        <EntityType Name="Weapons182">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Weapons" Relationship="TDAModel.WeaponsWeapons182" FromRole="Weapons182" ToRole="Weapons" />
+        </EntityType>
+        <EntityType Name="Weapons204">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Weapons" Relationship="TDAModel.WeaponsWeapons204" FromRole="Weapons204" ToRole="Weapons" />
+        </EntityType>
+        <Association Name="WeaponsWeapons163">
+          <End Type="TDAModel.Weapons" Role="Weapons" Multiplicity="1" />
+          <End Type="TDAModel.Weapons163" Role="Weapons163" Multiplicity="1" />
+        </Association>
+        <Association Name="WeaponsWeapons182">
+          <End Type="TDAModel.Weapons" Role="Weapons" Multiplicity="1" />
+          <End Type="TDAModel.Weapons182" Role="Weapons182" Multiplicity="1" />
+        </Association>
+        <Association Name="WeaponsWeapons204">
+          <End Type="TDAModel.Weapons" Role="Weapons" Multiplicity="1" />
+          <End Type="TDAModel.Weapons204" Role="Weapons204" Multiplicity="1" />
+        </Association>
+        <EntityType Name="WeaponsNamed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Weapons" Relationship="TDAModel.WeaponsWeaponsNamed" FromRole="WeaponsNamed" ToRole="Weapons" />
+        </EntityType>
+        <Association Name="WeaponsWeaponsNamed">
+          <End Type="TDAModel.Weapons" Role="Weapons" Multiplicity="1" />
+          <End Type="TDAModel.WeaponsNamed" Role="WeaponsNamed" Multiplicity="1" />
+        </Association>
+        <EntityType Name="SetArmorSlot">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="SetArmor191" Relationship="TDAModel.SetArmor191SetArmorSlot" FromRole="SetArmorSlot" ToRole="SetArmor191" />
+          <NavigationProperty Name="SetArmor214" Relationship="TDAModel.SetArmor214SetArmorSlot" FromRole="SetArmorSlot" ToRole="SetArmor214" />
+          <NavigationProperty Name="SetArmor240" Relationship="TDAModel.SetArmor240SetArmorSlot" FromRole="SetArmorSlot" ToRole="SetArmor240" />
+          <NavigationProperty Name="Mask" Relationship="TDAModel.SetArmorSlotMask" FromRole="SetArmorSlot" ToRole="Mask" />
+          <NavigationProperty Name="Chest" Relationship="TDAModel.SetArmorSlotChest" FromRole="SetArmorSlot" ToRole="Chest" />
+          <NavigationProperty Name="Kneepads" Relationship="TDAModel.SetArmorSlotKneepads" FromRole="SetArmorSlot" ToRole="Kneepads" />
+          <NavigationProperty Name="Holster" Relationship="TDAModel.SetArmorSlotHolster" FromRole="SetArmorSlot" ToRole="Holster" />
+          <NavigationProperty Name="Gloves" Relationship="TDAModel.SetArmorSlotGloves" FromRole="SetArmorSlot" ToRole="Gloves" />
+          <NavigationProperty Name="Backpack" Relationship="TDAModel.SetArmorSlotBackpack" FromRole="SetArmorSlot" ToRole="Backpack" />
+        </EntityType>
+        <Association Name="SetArmor191SetArmorSlot">
+          <End Type="TDAModel.SetArmor191" Role="SetArmor191" Multiplicity="1" />
+          <End Type="TDAModel.SetArmorSlot" Role="SetArmorSlot" Multiplicity="1" />
+        </Association>
+        <Association Name="SetArmor214SetArmorSlot">
+          <End Type="TDAModel.SetArmor214" Role="SetArmor214" Multiplicity="1" />
+          <End Type="TDAModel.SetArmorSlot" Role="SetArmorSlot" Multiplicity="1" />
+        </Association>
+        <Association Name="SetArmor240SetArmorSlot">
+          <End Type="TDAModel.SetArmor240" Role="SetArmor240" Multiplicity="1" />
+          <End Type="TDAModel.SetArmorSlot" Role="SetArmorSlot" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Mask">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="SetArmorSlot" Relationship="TDAModel.SetArmorSlotMask" FromRole="Mask" ToRole="SetArmorSlot" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Chest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="SetArmorSlot" Relationship="TDAModel.SetArmorSlotChest" FromRole="Chest" ToRole="SetArmorSlot" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kneepads">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="SetArmorSlot" Relationship="TDAModel.SetArmorSlotKneepads" FromRole="Kneepads" ToRole="SetArmorSlot" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Backpack">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="SetArmorSlot" Relationship="TDAModel.SetArmorSlotBackpack" FromRole="Backpack" ToRole="SetArmorSlot" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gloves">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="SetArmorSlot" Relationship="TDAModel.SetArmorSlotGloves" FromRole="Gloves" ToRole="SetArmorSlot" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Holster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="SetArmorSlot" Relationship="TDAModel.SetArmorSlotHolster" FromRole="Holster" ToRole="SetArmorSlot" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="SetArmorSlotMask">
+          <End Type="TDAModel.SetArmorSlot" Role="SetArmorSlot" Multiplicity="1" />
+          <End Type="TDAModel.Mask" Role="Mask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SetArmorSlot">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mask">
+              <PropertyRef Name="SetArmorSlotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SetArmorSlotChest">
+          <End Type="TDAModel.SetArmorSlot" Role="SetArmorSlot" Multiplicity="1" />
+          <End Type="TDAModel.Chest" Role="Chest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SetArmorSlot">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chest">
+              <PropertyRef Name="SetArmorSlotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SetArmorSlotKneepads">
+          <End Type="TDAModel.SetArmorSlot" Role="SetArmorSlot" Multiplicity="1" />
+          <End Type="TDAModel.Kneepads" Role="Kneepads" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SetArmorSlot">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kneepads">
+              <PropertyRef Name="SetArmorSlotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SetArmorSlotHolster">
+          <End Type="TDAModel.SetArmorSlot" Role="SetArmorSlot" Multiplicity="1" />
+          <End Type="TDAModel.Holster" Role="Holster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SetArmorSlot">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Holster">
+              <PropertyRef Name="SetArmorSlotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SetArmorSlotGloves">
+          <End Type="TDAModel.SetArmorSlot" Role="SetArmorSlot" Multiplicity="1" />
+          <End Type="TDAModel.Gloves" Role="Gloves" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SetArmorSlot">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gloves">
+              <PropertyRef Name="SetArmorSlotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SetArmorSlotBackpack">
+          <End Type="TDAModel.SetArmorSlot" Role="SetArmorSlot" Multiplicity="1" />
+          <End Type="TDAModel.Backpack" Role="Backpack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SetArmorSlot">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Backpack">
+              <PropertyRef Name="SetArmorSlotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="HEMask">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEArmorSlots" Relationship="TDAModel.HEArmorSlotsHEMask" FromRole="HEMask" ToRole="HEArmorSlots" />
+          <Property Name="HEArmorSlotsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEMaskTalents" Relationship="TDAModel.HEMaskHEMaskTalents" FromRole="HEMask" ToRole="HEMaskTalents" />
+        </EntityType>
+        <EntityType Name="HEChest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEArmorSlots" Relationship="TDAModel.HEArmorSlotsHEChest" FromRole="HEChest" ToRole="HEArmorSlots" />
+          <Property Name="HEArmorSlotsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEChestTalents" Relationship="TDAModel.HEChestHEChestTalents" FromRole="HEChest" ToRole="HEChestTalents" />
+          <NavigationProperty Name="HEChestMainstat" Relationship="TDAModel.HEChestHEChestMainstat" FromRole="HEChest" ToRole="HEChestMainstat" />
+        </EntityType>
+        <EntityType Name="HEKneepads">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEArmorSlots" Relationship="TDAModel.HEArmorSlotsHEKneepads" FromRole="HEKneepads" ToRole="HEArmorSlots" />
+          <Property Name="HEArmorSlotsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEKneepadsTalents" Relationship="TDAModel.HEKneepadsHEKneepadsTalents" FromRole="HEKneepads" ToRole="HEKneepadsTalents" />
+        </EntityType>
+        <EntityType Name="HEBackpack">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEArmorSlots" Relationship="TDAModel.HEArmorSlotsHEBackpack" FromRole="HEBackpack" ToRole="HEArmorSlots" />
+          <Property Name="HEArmorSlotsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEBackpackTalents" Relationship="TDAModel.HEBackpackHEBackpackTalents" FromRole="HEBackpack" ToRole="HEBackpackTalents" />
+        </EntityType>
+        <EntityType Name="HEGloves">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEArmorSlots" Relationship="TDAModel.HEArmorSlotsHEGloves" FromRole="HEGloves" ToRole="HEArmorSlots" />
+          <Property Name="HEArmorSlotsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEGlovesTalents" Relationship="TDAModel.HEGlovesHEGlovesTalents" FromRole="HEGloves" ToRole="HEGlovesTalents" />
+        </EntityType>
+        <EntityType Name="HEHolster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SetArmorSlotId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEArmorSlots" Relationship="TDAModel.HEArmorSlotsHEHolster" FromRole="HEHolster" ToRole="HEArmorSlots" />
+          <Property Name="HEArmorSlotsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEHolsterTalents" Relationship="TDAModel.HEHolsterHEHolsterTalents" FromRole="HEHolster" ToRole="HEHolsterTalents" />
+        </EntityType>
+        <EntityType Name="HEArmor163">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEArmor" Relationship="TDAModel.HEArmorHEArmor163" FromRole="HEArmor163" ToRole="HEArmor" />
+          <Property Name="HEArmorId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HEArmorSlots" Relationship="TDAModel.HEArmor163HEArmorSlots" FromRole="HEArmor163" ToRole="HEArmorSlots" />
+        </EntityType>
+        <EntityType Name="HEArmor182">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEArmor" Relationship="TDAModel.HEArmorHEArmor182" FromRole="HEArmor182" ToRole="HEArmor" />
+          <NavigationProperty Name="HEArmorSlots" Relationship="TDAModel.HEArmor182HEArmorSlots" FromRole="HEArmor182" ToRole="HEArmorSlots" />
+        </EntityType>
+        <EntityType Name="HEArmor204">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEArmor" Relationship="TDAModel.HEArmorHEArmor204" FromRole="HEArmor204" ToRole="HEArmor" />
+          <NavigationProperty Name="HEArmorSlots" Relationship="TDAModel.HEArmor204HEArmorSlots" FromRole="HEArmor204" ToRole="HEArmorSlots" />
+        </EntityType>
+        <EntityType Name="HEArmorSlots">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEArmor204" Relationship="TDAModel.HEArmor204HEArmorSlots" FromRole="HEArmorSlots" ToRole="HEArmor204" />
+          <NavigationProperty Name="HEArmor182" Relationship="TDAModel.HEArmor182HEArmorSlots" FromRole="HEArmorSlots" ToRole="HEArmor182" />
+          <NavigationProperty Name="HEArmor163" Relationship="TDAModel.HEArmor163HEArmorSlots" FromRole="HEArmorSlots" ToRole="HEArmor163" />
+          <NavigationProperty Name="HEChest" Relationship="TDAModel.HEArmorSlotsHEChest" FromRole="HEArmorSlots" ToRole="HEChest" />
+          <NavigationProperty Name="HEKneepads" Relationship="TDAModel.HEArmorSlotsHEKneepads" FromRole="HEArmorSlots" ToRole="HEKneepads" />
+          <NavigationProperty Name="HEGloves" Relationship="TDAModel.HEArmorSlotsHEGloves" FromRole="HEArmorSlots" ToRole="HEGloves" />
+          <NavigationProperty Name="HEMask" Relationship="TDAModel.HEArmorSlotsHEMask" FromRole="HEArmorSlots" ToRole="HEMask" />
+          <NavigationProperty Name="HEHolster" Relationship="TDAModel.HEArmorSlotsHEHolster" FromRole="HEArmorSlots" ToRole="HEHolster" />
+          <NavigationProperty Name="HEBackpack" Relationship="TDAModel.HEArmorSlotsHEBackpack" FromRole="HEArmorSlots" ToRole="HEBackpack" />
+        </EntityType>
+        <Association Name="HEArmorHEArmor163">
+          <End Type="TDAModel.HEArmor" Role="HEArmor" Multiplicity="1" />
+          <End Type="TDAModel.HEArmor163" Role="HEArmor163" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="HEArmor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HEArmor163">
+              <PropertyRef Name="HEArmorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HEArmorHEArmor182">
+          <End Type="TDAModel.HEArmor" Role="HEArmor" Multiplicity="1" />
+          <End Type="TDAModel.HEArmor182" Role="HEArmor182" Multiplicity="1" />
+        </Association>
+        <Association Name="HEArmorHEArmor204">
+          <End Type="TDAModel.HEArmor" Role="HEArmor" Multiplicity="1" />
+          <End Type="TDAModel.HEArmor204" Role="HEArmor204" Multiplicity="1" />
+        </Association>
+        <Association Name="HEArmor204HEArmorSlots">
+          <End Type="TDAModel.HEArmor204" Role="HEArmor204" Multiplicity="1" />
+          <End Type="TDAModel.HEArmorSlots" Role="HEArmorSlots" Multiplicity="1" />
+        </Association>
+        <Association Name="HEArmor182HEArmorSlots">
+          <End Type="TDAModel.HEArmor182" Role="HEArmor182" Multiplicity="1" />
+          <End Type="TDAModel.HEArmorSlots" Role="HEArmorSlots" Multiplicity="1" />
+        </Association>
+        <Association Name="HEArmor163HEArmorSlots">
+          <End Type="TDAModel.HEArmor163" Role="HEArmor163" Multiplicity="1" />
+          <End Type="TDAModel.HEArmorSlots" Role="HEArmorSlots" Multiplicity="1" />
+        </Association>
+        <Association Name="HEArmorSlotsHEChest">
+          <End Type="TDAModel.HEArmorSlots" Role="HEArmorSlots" Multiplicity="1" />
+          <End Type="TDAModel.HEChest" Role="HEChest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HEArmorSlots">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HEChest">
+              <PropertyRef Name="HEArmorSlotsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HEArmorSlotsHEKneepads">
+          <End Type="TDAModel.HEArmorSlots" Role="HEArmorSlots" Multiplicity="1" />
+          <End Type="TDAModel.HEKneepads" Role="HEKneepads" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HEArmorSlots">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HEKneepads">
+              <PropertyRef Name="HEArmorSlotsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HEArmorSlotsHEGloves">
+          <End Type="TDAModel.HEArmorSlots" Role="HEArmorSlots" Multiplicity="1" />
+          <End Type="TDAModel.HEGloves" Role="HEGloves" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HEArmorSlots">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HEGloves">
+              <PropertyRef Name="HEArmorSlotsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HEArmorSlotsHEMask">
+          <End Type="TDAModel.HEArmorSlots" Role="HEArmorSlots" Multiplicity="1" />
+          <End Type="TDAModel.HEMask" Role="HEMask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HEArmorSlots">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HEMask">
+              <PropertyRef Name="HEArmorSlotsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HEArmorSlotsHEHolster">
+          <End Type="TDAModel.HEArmorSlots" Role="HEArmorSlots" Multiplicity="1" />
+          <End Type="TDAModel.HEHolster" Role="HEHolster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HEArmorSlots">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HEHolster">
+              <PropertyRef Name="HEArmorSlotsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HEArmorSlotsHEBackpack">
+          <End Type="TDAModel.HEArmorSlots" Role="HEArmorSlots" Multiplicity="1" />
+          <End Type="TDAModel.HEBackpack" Role="HEBackpack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HEArmorSlots">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HEBackpack">
+              <PropertyRef Name="HEArmorSlotsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="HEGlovesTalents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEGloves" Relationship="TDAModel.HEGlovesHEGlovesTalents" FromRole="HEGlovesTalents" ToRole="HEGloves" />
+        </EntityType>
+        <EntityType Name="HEKneepadsTalents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEKneepads" Relationship="TDAModel.HEKneepadsHEKneepadsTalents" FromRole="HEKneepadsTalents" ToRole="HEKneepads" />
+        </EntityType>
+        <EntityType Name="HEChestTalents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEChest" Relationship="TDAModel.HEChestHEChestTalents" FromRole="HEChestTalents" ToRole="HEChest" />
+        </EntityType>
+        <Association Name="HEGlovesHEGlovesTalents">
+          <End Type="TDAModel.HEGloves" Role="HEGloves" Multiplicity="1" />
+          <End Type="TDAModel.HEGlovesTalents" Role="HEGlovesTalents" Multiplicity="1" />
+        </Association>
+        <Association Name="HEKneepadsHEKneepadsTalents">
+          <End Type="TDAModel.HEKneepads" Role="HEKneepads" Multiplicity="1" />
+          <End Type="TDAModel.HEKneepadsTalents" Role="HEKneepadsTalents" Multiplicity="1" />
+        </Association>
+        <Association Name="HEChestHEChestTalents">
+          <End Type="TDAModel.HEChest" Role="HEChest" Multiplicity="1" />
+          <End Type="TDAModel.HEChestTalents" Role="HEChestTalents" Multiplicity="1" />
+        </Association>
+        <EntityType Name="HEMaskTalents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEMask" Relationship="TDAModel.HEMaskHEMaskTalents" FromRole="HEMaskTalents" ToRole="HEMask" />
+        </EntityType>
+        <EntityType Name="HEHolsterTalents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEHolster" Relationship="TDAModel.HEHolsterHEHolsterTalents" FromRole="HEHolsterTalents" ToRole="HEHolster" />
+        </EntityType>
+        <EntityType Name="HEBackpackTalents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEBackpack" Relationship="TDAModel.HEBackpackHEBackpackTalents" FromRole="HEBackpackTalents" ToRole="HEBackpack" />
+        </EntityType>
+        <Association Name="HEMaskHEMaskTalents">
+          <End Type="TDAModel.HEMask" Role="HEMask" Multiplicity="1" />
+          <End Type="TDAModel.HEMaskTalents" Role="HEMaskTalents" Multiplicity="1" />
+        </Association>
+        <Association Name="HEHolsterHEHolsterTalents">
+          <End Type="TDAModel.HEHolster" Role="HEHolster" Multiplicity="1" />
+          <End Type="TDAModel.HEHolsterTalents" Role="HEHolsterTalents" Multiplicity="1" />
+        </Association>
+        <Association Name="HEBackpackHEBackpackTalents">
+          <End Type="TDAModel.HEBackpack" Role="HEBackpack" Multiplicity="1" />
+          <End Type="TDAModel.HEBackpackTalents" Role="HEBackpackTalents" Multiplicity="1" />
+        </Association>
+        <EntityType Name="HEChestMajorSlot1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="HEChestMajorSlot2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="HEChestMajorSlot3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="HEChestMajorAttribs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="HEChestMainstat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEChest" Relationship="TDAModel.HEChestHEChestMainstat" FromRole="HEChestMainstat" ToRole="HEChest" />
+          <Property Name="HEChestId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MainstatFirearms" Relationship="TDAModel.HEChestMainstatMainstatFirearms" FromRole="HEChestMainstat" ToRole="MainstatFirearms" />
+          <NavigationProperty Name="MainstatStamina" Relationship="TDAModel.HEChestMainstatMainstatStamina" FromRole="HEChestMainstat" ToRole="MainstatStamina" />
+          <NavigationProperty Name="MainstatElectronics" Relationship="TDAModel.HEChestMainstatMainstatElectronics" FromRole="HEChestMainstat" ToRole="MainstatElectronics" />
+        </EntityType>
+        <EntityType Name="MainstatFirearms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEChestMainstat" Relationship="TDAModel.HEChestMainstatMainstatFirearms" FromRole="MainstatFirearms" ToRole="HEChestMainstat" />
+        </EntityType>
+        <EntityType Name="MainstatStamina">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEChestMainstat" Relationship="TDAModel.HEChestMainstatMainstatStamina" FromRole="MainstatStamina" ToRole="HEChestMainstat" />
+        </EntityType>
+        <EntityType Name="MainstatElectronics">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HEChestMainstat" Relationship="TDAModel.HEChestMainstatMainstatElectronics" FromRole="MainstatElectronics" ToRole="HEChestMainstat" />
+        </EntityType>
+        <Association Name="HEChestHEChestMainstat">
+          <End Type="TDAModel.HEChest" Role="HEChest" Multiplicity="1" />
+          <End Type="TDAModel.HEChestMainstat" Role="HEChestMainstat" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="HEChest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HEChestMainstat">
+              <PropertyRef Name="HEChestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HEChestMainstatMainstatFirearms">
+          <End Type="TDAModel.HEChestMainstat" Role="HEChestMainstat" Multiplicity="1" />
+          <End Type="TDAModel.MainstatFirearms" Role="MainstatFirearms" Multiplicity="0..1" />
+        </Association>
+        <Association Name="HEChestMainstatMainstatStamina">
+          <End Type="TDAModel.HEChestMainstat" Role="HEChestMainstat" Multiplicity="1" />
+          <End Type="TDAModel.MainstatStamina" Role="MainstatStamina" Multiplicity="0..1" />
+        </Association>
+        <Association Name="HEChestMainstatMainstatElectronics">
+          <End Type="TDAModel.HEChestMainstat" Role="HEChestMainstat" Multiplicity="1" />
+          <End Type="TDAModel.MainstatElectronics" Role="MainstatElectronics" Multiplicity="0..1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TDAModelStoreContainer" CdmEntityContainer="TDAEntities" />
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
